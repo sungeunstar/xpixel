@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Xpixel Landing</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"> <!-- 분리된 CSS 연결 -->
 </head>
 <body>
-  <header>
-    <h1>Xpixel</h1>
-    <p>브랜딩과 개발을 잘하는 크리에이티브 팀</p>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-row">
+      <a class="brand" href="#">S</a>
+      <nav class="nav">
+        <a class="nav-link is-active" href="#">Work</a>
+        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Workflow</a>
+        <a class="nav-link" href="#">Case Study</a>
+        <a class="nav-link" href="#">Contact</a>
+      </nav>
+      <div class="util">
+        <button class="lang">일본어 ▾</button>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section class="intro">
-      <h2>우리는 아이디어를 현실로 만듭니다</h2>
-      <p>브랜드 전략부터 디자인, 개발까지 A to Z</p>
-      <button>프로젝트 문의하기</button>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Xpixel. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <!-- HERO (풀폭, 왼쪽 정렬) -->
+  <section class="hero">
+    <h1 class="hero-title">
+<p>A Studio That Engaged in All Aspects of</p>
+<p>Creative Work for Branding.</p>
+    </h1>
+  </section>
 </body>
 </html>

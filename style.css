@@ -1,30 +1,62 @@
-body {
-  font-family: Pretendard, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #0a0a0a;
-  color: white;
-  text-align: center;
+:root{
+  --ink:#0b0d0f; --line:#e6eaf0; --muted:#6b727a;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0; background:#fff; color:var(--ink);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Pretendard,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
 }
 
-header {
-  padding: 100px 20px 40px;
+/* ===== Header ===== */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:saturate(120%) blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.header-row{
+  height:68px; display:grid; grid-template-columns:auto 1fr auto;
+  align-items:center; padding:0 5vw; /* 화면 비율 기반 여백 */
+}
+.brand{
+  display:inline-block; width:28px; height:28px;
+  border:1.5px solid var(--ink); border-radius:50%;
+  text-align:center; line-height:26px; font-weight:700;
+  text-decoration:none; color:var(--ink);
+}
+.nav{display:flex; align-items:center; gap:36px; justify-content:center}
+.nav-link{
+  position:relative; display:inline-block; padding:8px 2px;
+  text-decoration:none; color:var(--ink);
+  font-weight:500; font-size:16px; letter-spacing:.01em;
+}
+.nav-link.is-active::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--ink);
+}
+.nav-link:hover{opacity:.7}
+.util{display:flex; align-items:center; gap:12px}
+.lang{border:0; background:transparent; color:var(--ink); font:inherit; padding:8px 6px; cursor:pointer}
+
+/* ===== Hero (풀폭, 왼쪽 정렬, 크게 퍼지는 타이포) ===== */
+.hero{width:100%; padding:18vh 0 12vh}
+.hero-title{
+  margin:0; padding-left:5vw;          /* 왼쪽만 여백 */
+  max-width:none; font-weight:300;
+  font-size:clamp(62px,12vw,145px);    /* 화면에 비례해 크게 */
+  line-height:1; letter-spacing:-.02em;
+  word-break:keep-all;
 }
 
-.intro {
-  padding: 80px 20px;
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .header-row{height:64px; padding:0 4vw}
+  .nav{gap:28px}
+  .hero{padding:14vh 0 10vh}
+  .hero-title{font-size:clamp(64px,10vw,160px)}
 }
-
-button {
-  background-color: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background-color: #0059c1;
+@media (max-width:640px){
+  .header-row{padding:0 3vw}
+  .nav{gap:20px}
+  .hero{padding:10vh 0 8vh}
+  .hero-title{font-size:clamp(48px,9vw,120px)}
 }
